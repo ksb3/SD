@@ -65,9 +65,12 @@ public class TimestampVector implements Serializable{
 	 * @param timestamp
 	 */
 	public void updateTimestamp(Timestamp timestamp){
-		LSimLogger.log(Level.TRACE, "Updating the TimestampVectorInserting with the timestamp: "+timestamp);
-
-		// ...
+		//TODO Phase 1
+		
+		//Añadimos la marca de tiempo recibida al vector de marcas de tiempo, si esta no es null
+		if (timestamp != null) {
+			this.timestampVector.put(timestamp.getHostid(),timestamp);
+		}
 	}
 	
 	/**
@@ -110,10 +113,18 @@ public class TimestampVector implements Serializable{
 	/**
 	 * equals
 	 */
-	public boolean equals(Object obj){
-		
-		// return generated automatically. Remove it when implementing your solution 
-		return false;
+	public boolean equals(TimestampVector param){
+		//TODO Phase 1
+		//Comprobamos si ambos vectores de marcas de tiempo son iguales
+		if (this.timestampVector == (param.timestampVector)) {
+			return true;
+		}else if (this.timestampVector == null || param.timestampVector == null){
+			//comprueba que ninguna de las dos marcas de tiempo sean null, en caso de que alguna lo sea devuelve null
+			return false;
+		}else {
+			//devuelve el valor de la función equals
+			return this.timestampVector.equals(param.timestampVector);
+		}
 	}
 
 	/**

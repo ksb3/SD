@@ -68,14 +68,43 @@ public class Log implements Serializable{
 	 * the user is not the previous operation than the one 
 	 * being inserted, the insertion will fail.
 	 * 
+	 * Sychronized??
+	 * 
 	 * @param op
 	 * @return true if op is inserted, false otherwise.
 	 */
-	public boolean add(Operation op){
-		// ....
+	public synchronized boolean add(Operation op){
+		//TODO Phase 1
+		//Añadir la operación al log, en caso de que el timeStamp sea posterior al último registrado en este	
+
+		Timestamp lastTime; //se usa para registrar el timestamp de la última operación
+		String hostId = op.getTimestamp().getHostid(); //obtenemos el id del host que ha envíado la operación
+		List<Operation> ops = log.get(hostId); //Creamos una lista con los logs que atañen al host que envía la operacion op
 		
-		// return generated automatically. Remove it when implementing your solution 
-		return false;
+		//checkeamos si existe alguna operación previa en la lista de operaciones
+		if (ops == null || ops.isEmpty()) {
+			//No hay ninguna operación en el log
+			lastTime = null;
+		}else {
+			lastTime = ops.get(ops.size() -1).getTimestamp();
+			//Obetenmos el timestamp de la última operación
+			//Sabemos que la última operación es la que ocupa la posición, tamaño de lista -1, 
+			//ya que la primera ocupa la posición 0 
+		}
+		//Una vez obtenido el timeStamp de la última operación la compararemos con el timestamp de la operción actual
+		//para comprobar que no sea anterior
+		long diff = op.getTimestamp().compare(lastTime);
+		
+		if ((lastTime == null && diff == 0) || (lastTime != null && diff==1)) {
+			//si el timeStamp de la operacion op es posterior al de la última anotación en el log, la añadimos
+			log.get(hostId).add(op);
+			return true;
+		}else {
+			//en el caso de que el timeStamp de la operación op no cumpla con la condición,
+			//no la añadimos al log
+			return false;
+		}
+		
 	}
 	
 	/**
@@ -107,9 +136,21 @@ public class Log implements Serializable{
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		
-		// return generated automatically. Remove it when implementing your solution 
-		return false;
+		//TODO Phase 1
+		//comprobamos que el objeto que hemos recibido no es null y que es una instancia de la clase Log
+		if ((obj == null) || !(obj instanceof Log)) {
+			//Si no es una instancia de la clase Log, devolvemos false
+			return false;
+		}
+		Log temp = (Log) obj;
+		//Tras chequear que tanto el objeto recibido como el de la clase no son null, 
+		//realizamos la comprobación de que ambos obejtos sean iguales o no mediante la función equals
+		if ((this.log == null) || (temp.log == null)) {
+			return false;
+		}else {
+			return this.log.equals((temp).log);
+		}
+
 	}
 
 	/**
