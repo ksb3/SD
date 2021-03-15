@@ -66,7 +66,6 @@ public class TimestampVector implements Serializable{
 	 */
 	public void updateTimestamp(Timestamp timestamp){
 		//TODO Phase 1
-		
 		//Añadimos la marca de tiempo recibida al vector de marcas de tiempo, si esta no es null
 		if (timestamp != null) {
 			this.timestampVector.put(timestamp.getHostid(),timestamp);
