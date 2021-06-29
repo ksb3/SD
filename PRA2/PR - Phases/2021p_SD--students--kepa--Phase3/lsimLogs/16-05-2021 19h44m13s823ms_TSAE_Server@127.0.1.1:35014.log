@@ -1,0 +1,7 @@
+16-05-2021 19:44:14:025 TSAE_Server@127.0.1.1:35014 [INFO] : -- *** --> Server -- local node: [127.0.1.1,35014,Server@127.0.1.1:35014]
+16-05-2021 19:44:14:078 TSAE_Server@127.0.1.1:35014 [INFO] : -- *** --> Server -- participants: [Server@127.0.1.1:35000, Server@127.0.1.1:35001, Server@127.0.1.1:35002, Server@127.0.1.1:35003, Server@127.0.1.1:35004, Server@127.0.1.1:35005, Server@127.0.1.1:35006, Server@127.0.1.1:35007, Server@127.0.1.1:35008, Server@127.0.1.1:35009, Server@127.0.1.1:35010, Server@127.0.1.1:35011, Server@127.0.1.1:35012, Server@127.0.1.1:35013, Server@127.0.1.1:35014]
+16-05-2021 19:44:14:141 TSAE_Server@127.0.1.1:35014 [TRACE] : [TSAESessionOriginatorSide] [session: 1] TSAE session
+16-05-2021 19:44:20:098 TSAE_Server@127.0.1.1:35014 [INFO] : [Server@127.0.1.1:35014] ADD recipe: acbonvac
+16-05-2021 19:46:20:098 TSAE_Server@127.0.1.1:35014 [INFO] : [Server@127.0.1.1:35014] >> Server DISCONNECTION
+16-05-2021 19:46:40:098 TSAE_Server@127.0.1.1:35014 [INFO] : [Server@127.0.1.1:35014] >> Server RECONNECTION
+16-05-2021 19:47:40:099 TSAE_Server@127.0.1.1:35014 [INFO] : [Server@127.0.1.1:35014] >> Server DISCONNECTION

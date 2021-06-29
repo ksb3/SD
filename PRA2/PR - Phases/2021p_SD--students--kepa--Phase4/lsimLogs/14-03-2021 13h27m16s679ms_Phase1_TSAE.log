@@ -1,0 +1,2 @@
+14-03-2021 13:27:16:709 Phase1_TSAE [TRACE] : Añadiendo una operación al Log: AddOperation [recipe=[Tortilla de patata, huevos, patata, aceite, localhost:9000], timestamp=localhost:9000:   0]
+14-03-2021 13:27:16:710 Phase1_TSAE [TRACE] : Updating the TimestampVectorInserting with the timestamp: localhost:9000:   0

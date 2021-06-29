@@ -1,0 +1,4 @@
+14-03-2021 13:31:01:282 Phase1_TSAE [TRACE] : Añadiendo una operación al Log: AddOperation [recipe=[ñlkjdfñak, asdfklañsdlfk, localhost:9000], timestamp=localhost:9000:   0]
+14-03-2021 13:31:01:283 Phase1_TSAE [TRACE] : Updating the TimestampVectorInserting with the timestamp: localhost:9000:   0
+14-03-2021 13:31:01:283 Phase1_TSAE [TRACE] : obtenemos el hostID: localhost:9000
+14-03-2021 13:31:01:283 Phase1_TSAE [TRACE] : obtenemos el hostID: {localhost:9000=localhost:9000:   0}
